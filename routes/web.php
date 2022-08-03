@@ -21,3 +21,7 @@ Route::get('/', function () {
 Route::get('/admin/home', function () {
     return view('admin.home');
 });
+
+Route::get('/auth/login', function () {
+    return view('auth.login');
+});

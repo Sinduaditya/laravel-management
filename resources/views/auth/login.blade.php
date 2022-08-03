@@ -30,28 +30,51 @@
     <link rel="stylesheet" href="{{ asset('lte/plugins/summernote/summernote-bs4.min.css') }}">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
-
-        <!-- Preloader -->
-        <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{ asset('lte/dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo"
-                height="60" width="60">
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="#"><b>Management</b>&nbsp;Inventory</a>
         </div>
-        @include('admin.header')
-        @include('admin.sidebar')
-        @yield('content')
-        {{-- @include('admin.footer') --}}
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Sign in to start your session</p>
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+                <form action="../../index3.html" method="post">
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Email">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" placeholder="Password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- /.col -->
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                </form>
+                <!-- /.social-auth-links -->
+                <p class="mt-2">
+                    <a href="register.html" class="text-center">Register a new membership</a>
+                </p>
+            </div>
+            <!-- /.login-card-body -->
+        </div>
     </div>
-    <!-- ./wrapper -->
 
-    <!-- jQuery -->
+    {{-- Script --}}
     <script src="{{ asset('lte/plugins/jquery/jquery.min.js') }}"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="{{ asset('lte/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
@@ -86,5 +109,3 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('lte/dist/js/pages/dashboard.js') }}"></script>
 </body>
-
-</html>
