@@ -15,11 +15,31 @@
                  <i class="fas fa-expand-arrows-alt"></i>
              </a>
          </li>
-         <li class="nav-item">
-             {{-- <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#"
-                 role="button">
-                 <i class="fas fa-th-large"></i>
-             </a> --}}
+         <!-- Messages Dropdown Menu -->
+         <li class="nav-item dropdown">
+             <a class="nav-link" data-toggle="dropdown" href="#">
+                 <i class="far fa-user"></i>
+             </a>
+             <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+                 <a href="#" class="dropdown-item">
+                     <!-- Message Start -->
+                     <div class="">
+                         <div class="card-body box-profile">
+                             <div class="text-center">
+                                 <img class="profile-user-img  img-circle"
+                                     src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1780&q=80"
+                                     alt="User profile picture">
+                             </div>
+
+                             <h3 class="profile-username text-center">Sindu Aditya Janadi</h3>
+
+                             <p class="text-muted text-center">Admin</p>
+                         </div>
+                         <!-- /.card-body -->
+                     </div>
+                     <!-- Message End -->
+                 </a>
+             </div>
          </li>
      </ul>
  </nav>

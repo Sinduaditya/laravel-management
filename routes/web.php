@@ -25,3 +25,19 @@ Route::get('/admin/home', function () {
 Route::get('/auth/login', function () {
     return view('auth.login');
 });
+
+Route::get('/auth/register', function () {
+    return view('auth.register');
+});
+
+Route::get('/barang', function () {
+    return view('main.barang');
+});
+
+Route::get('/barangkeluar', function () {
+    return view('main.barangkeluar');
+});
+
+Route::get('/gudang', function () {
+    return view('main.gudang');
+});
