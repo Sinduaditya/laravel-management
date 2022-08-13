@@ -83,14 +83,13 @@
                                     Rosyana
                                 </td>
                                 <td class="project-actions ">
-
                                     <a class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal-editbarang"
                                         href="#">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Edit
                                     </a>
-                                    <a class="btn btn-danger swalDefaultWarning btn-sm" href="#">
+                                    <a class="btn btn-danger btn-sm" href="#">
                                         <i class="fas fa-trash">
                                         </i>
                                         Delete

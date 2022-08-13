@@ -41,3 +41,8 @@ Route::get('/barangkeluar', function () {
 Route::get('/gudang', function () {
     return view('main.gudang');
 });
+
+Route::get('/gudang', function () {
+    return view('main.gudang');
+});
+
