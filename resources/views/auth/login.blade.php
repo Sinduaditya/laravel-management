@@ -7,21 +7,30 @@
                 <b>Management</b>&nbsp;Inventory
             </div>
             <!-- /.login-logo -->
-            <div class="card">
-                <div class="card-body login-card-body">
-                    <p class="login-box-msg">Login Untuk Memulai Pengelolaan</p>
+            <div class="card p-0">
+                <div class="card-body login-card-body ">
+                    <h5 class="login-box-msg">Login Untuk Memulai Pengelolaan</h5>
 
-                    <form action="../../index3.html" method="post">
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Username">
+                    <form method="POST" action="{{ route('login.custom') }}">
+                        @csrf
+                        <div class="input-group mb-3 p-0">
+                            <input type="text" placeholder="Email" id="email" class="form-control" name="email"
+                                required autofocus>
+                            @if ($errors->has('email'))
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                            @endif
                             <div class="input-group-append">
                                 <div class="input-group-text">
-                                    <span class="fas fa-user"></span>
+                                    <span class="fas fa-mail-bulk"></span>
                                 </div>
                             </div>
                         </div>
-                        <div class="input-group mb-3">
-                            <input type="password" class="form-control" placeholder="Password">
+                        <div class="input-group mb-3 p-0">
+                            <input type="password" placeholder="Password" id="password" class="form-control"
+                                name="password" required>
+                            @if ($errors->has('password'))
+                                <span class="text-danger">{{ $errors->first('password') }}</span>
+                            @endif
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-lock"></span>
@@ -38,7 +47,7 @@
                     </form>
                     <!-- /.social-auth-links -->
                     <p class="mt-2">
-                        <a href="/auth/register" class="text-center">Daftar Akun Baru</a>
+                        <a href="{{ route('register-user') }}" class="text-center">Daftar Akun Baru</a>
                     </p>
                 </div>
                 <!-- /.login-card-body -->

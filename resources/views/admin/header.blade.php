@@ -31,8 +31,11 @@
                                      alt="User profile picture">
                              </div>
 
-                             <h3 class="profile-username text-center">Sindu Aditya Janadi</h3>
+                             <h3 class="profile-username text-center">
+                                 {{-- <h2>Welcome Back</h2>{{ Auth::user()->email }} --}}
+                             </h3>
 
+                             {{-- Maintenance --}}
                              <p class="text-muted text-center">Admin</p>
                          </div>
                          <!-- /.card-body -->

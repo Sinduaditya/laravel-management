@@ -19,7 +19,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="/admin/home" class="nav-link">
+                    <a href="/home" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -38,7 +38,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/barang" class="nav-link">
+                            <a href="/item" class="nav-link">
                                 <i class="nav-icon fas fa-cart-plus"></i>
                                 <p>Barang Masuk</p>
                             </a>
@@ -52,17 +52,9 @@
                             </a>
                         </li>
                     </ul>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="/barangkeluar" class="nav-link">
-                                <i class="nav-icon fas fa-box-open"></i>
-                                <p>Barang Keluar</p>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="/logout" class="nav-link">
+                    <a href="{{ route('signout') }}" class="nav-link">
                         <i class="nav-icon fas fa-arrow-alt-circle-right"></i>
                         <p>
                             LogOut

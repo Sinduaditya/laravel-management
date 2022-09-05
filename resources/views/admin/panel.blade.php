@@ -39,8 +39,8 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="{{ asset('lte/dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo"
-                height="60" width="60">
+            <img class="animation__shake" src="{{ asset('lte/dist/img/Frame.png') }} " alt="ManagementLogo"
+                height="60" width="60" style="border-radius: 50%">
         </div>
         @include('admin.header')
         @include('admin.sidebar')
@@ -87,8 +87,6 @@
     <script src="{{ asset('lte/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('lte/dist/js/adminlte.js') }}"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="{{ asset('lte/dist/js/demo.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ asset('lte/dist/js/pages/dashboard.js') }}"></script>
     <script>
@@ -116,6 +114,7 @@
             })
         });
     </script>
+    @yield('js')
 </body>
 
 </html>

@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Gudang
+                        <h1>Gudang</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -20,16 +20,13 @@
 
         <!-- Main content -->
         <section class="content">
-
             <!-- Default box -->
-            <div class="card">
+            <div class="card p-5">
                 <div class="card-header">
-                    <h3 class="card-title">Gudang
-                        <div class="card-tools">
-                        </div>
+                    <h6 class="card-title">Gudang</h6>
                 </div>
-                <div class="card-body p-0">
-                    <table class="table table-striped projects">
+                <div class="card-body">
+                    <table class="table table-striped projects table-bordered" id="tableGudang">
                         <thead>
                             <tr>
                                 <th>
@@ -51,30 +48,21 @@
                                     Penerima
                                 </th>
                             </tr>
+                            @php
+                                $i = 0;
+                            @endphp
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    1
-                                </td>
-                                <td>
-                                    <a>
-                                        Kulkas 5 Pintu
-                                    </a>
-                                </td>
-                                <td>
-                                    50
-                                </td>
-                                <td>
-                                    Sindu Aditya Janadi
-                                </td>
-                                <td>
-                                    <span>24-11-2022</span>
-                                </td>
-                                <td>
-                                    Rosyana
-                                </td>
-                            </tr>
+                            {{-- @foreach ($items as $item)
+                                <tr>
+                                    <td>{{ ++$i }}</td>
+                                    <td>{{ $item->nama_barang }}</td>
+                                    <td>{{ $item->jml_barang }}</td>
+                                    <td>{{ $item->penggirim }}</td>
+                                    <td>{{ $item->tanggal }}</td>
+                                    <td>{{ $item->penerima }}</td>
+                                </tr>
+                            @endforeach --}}
                         </tbody>
                     </table>
                 </div>
@@ -83,10 +71,11 @@
             <!-- /.card -->
         </section>
     </div>
+@endsection
 
-
-
+@section('js')
     <!-- DataTables  & Plugins -->
+    <script src="{{ asset('lte/plugins/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('lte/plugins/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('lte/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
@@ -100,27 +89,19 @@
     <script src="{{ asset('lte/plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('lte/plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
     <!-- AdminLTE App -->
-    <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
+    <script src="{{ asset('lte/dist/js/adminlte.min.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{ asset('dist/js/demo.js') }}"></script>
+    <script src="{{ asset('lte/dist/js/demo.js') }}"></script>
     <!-- Page specific script -->
     <script>
         $(function() {
-            $("#example1").DataTable({
+            $("#tableGudang").DataTable({
+                "searching": true,
                 "responsive": true,
                 "lengthChange": false,
                 "autoWidth": false,
-                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true,
-            });
+                "buttons": ["excel", "pdf", "print", ]
+            }).buttons().container().appendTo('#tableGudang_wrapper .col-md-6:eq(0)');
         });
     </script>
 @endsection

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,31 +20,27 @@ Route::get('/', function () {
 });
 
 
-Route::get('/admin/home', function () {
-    return view('admin.home');
-});
+// Route Crud
+Route::resource('/item', ItemController::class)->middleware('auth');
 
-Route::get('/auth/login', function () {
-    return view('auth.login');
-});
+// Route Web Auth
 
-Route::get('/auth/register', function () {
-    return view('auth.register');
-});
+Route::get('home', [CustomAuthController::class,'home'])->middleware('auth');
+Route::get('login', [CustomAuthController::class, 'index'])-> name('login')->middleware('guest');
+Route::post('custom-login',[CustomAuthController::class, 'customLogin'])->name('login.custom')->middleware('guest');
+Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user')->middleware('guest');
+Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom')->middleware('guest');
+Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 
-Route::get('/barang', function () {
-    return view('main.barang');
-});
 
-Route::get('/barangkeluar', function () {
-    return view('main.barangkeluar');
-});
+// if (Auth::guest()) {
+//     return redirect('login');
+// };
 
-Route::get('/gudang', function () {
-    return view('main.gudang');
-});
+// Route::get('/barangkeluar', function () {
+//     return view('main.barangkeluar');
+// });
 
 Route::get('/gudang', function () {
     return view('main.gudang');
-});
-
+})->middleware('auth');
