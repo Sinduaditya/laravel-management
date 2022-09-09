@@ -20,27 +20,22 @@ Route::get('/', function () {
 });
 
 
-// Route Crud
-Route::resource('/item', ItemController::class)->middleware('auth');
-
-// Route Web Auth
-
-Route::get('home', [CustomAuthController::class,'home'])->middleware('auth');
-Route::get('login', [CustomAuthController::class, 'index'])-> name('login')->middleware('guest');
-Route::post('custom-login',[CustomAuthController::class, 'customLogin'])->name('login.custom')->middleware('guest');
-Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user')->middleware('guest');
-Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom')->middleware('guest');
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/gudang', function () {
+        return view('main.gudang');
+    });
 
-// if (Auth::guest()) {
-//     return redirect('login');
-// };
+    Route::get('home', [CustomAuthController::class,'home']);
 
-// Route::get('/barangkeluar', function () {
-//     return view('main.barangkeluar');
-// });
+    Route::resource('/item', ItemController::class);
 
-Route::get('/gudang', function () {
-    return view('main.gudang');
-})->middleware('auth');
+});
+
+Route::middleware(['guest'])->group(function () {
+    Route::get('login', [CustomAuthController::class, 'index'])-> name('login');
+    Route::post('custom-login',[CustomAuthController::class, 'customLogin'])->name('login.custom');
+    Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
+    Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
+});

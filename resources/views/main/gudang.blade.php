@@ -53,16 +53,14 @@
                             @endphp
                         </thead>
                         <tbody>
-                            {{-- @foreach ($items as $item)
-                                <tr>
-                                    <td>{{ ++$i }}</td>
-                                    <td>{{ $item->nama_barang }}</td>
-                                    <td>{{ $item->jml_barang }}</td>
-                                    <td>{{ $item->penggirim }}</td>
-                                    <td>{{ $item->tanggal }}</td>
-                                    <td>{{ $item->penerima }}</td>
-                                </tr>
-                            @endforeach --}}
+                            <tr>
+                                <td>jbcid</td>
+                                <td>qjicdbc</td>
+                                <td>qjicdbc</td>
+                                <td>qjicdbc</td>
+                                <td>qjicdbc</td>
+                                <td>qjicdbc</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -96,7 +94,7 @@
     <script>
         $(function() {
             $("#tableGudang").DataTable({
-                "searching": true,
+                "searching": false,
                 "responsive": true,
                 "lengthChange": false,
                 "autoWidth": false,

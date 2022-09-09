@@ -53,6 +53,7 @@ class CustomAuthController extends Controller
 
         return redirect("login")->withSuccess('have signed-in');
     }
+
     public function create(array $data)
     {
       return User::create([

@@ -32,7 +32,7 @@
                              </div>
 
                              <h3 class="profile-username text-center">
-                                 {{-- <h2>Welcome Back</h2>{{ Auth::user()->email }} --}}
+                                 {{ Auth::user()->name }}
                              </h3>
 
                              {{-- Maintenance --}}

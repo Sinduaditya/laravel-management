@@ -40,7 +40,7 @@
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
             <img class="animation__shake" src="{{ asset('lte/dist/img/Frame.png') }} " alt="ManagementLogo"
-                height="60" width="60" style="border-radius: 50%">
+                height="80" width="80" style="border-radius: 50%">
         </div>
         @include('admin.header')
         @include('admin.sidebar')
